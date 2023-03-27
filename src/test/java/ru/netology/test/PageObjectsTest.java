@@ -64,5 +64,22 @@ public class PageObjectsTest {
 
     }
 
+    @Test
+    void shouldTransferFromTheSecondCardToTheFirstOverLimit() {
+        DashboardPage dashboardPage = login();
+        var firstCard = getFirstCardInfo();
+        var secondCard = getSecondCardInfo();
+        int sum = 22000;
+        var balanceForFirstCard = dashboardPage.getCardBalance(secondCard) - sum;
+        var balanceForSecondCard = dashboardPage.getCardBalance(firstCard) + sum;
+        var moneytransferForCard = dashboardPage.choosCardForTransfer(firstCard);
+        dashboardPage = moneytransferForCard.makeMoneyTransfer(Integer.parseInt(String.valueOf(sum)), secondCard);
+        var actualBalanceForFirstCard = dashboardPage.getCardBalance(secondCard);
+        var actualBalanceForSecondCard = dashboardPage.getCardBalance(firstCard);
+        assertEquals(balanceForFirstCard, actualBalanceForFirstCard);
+        assertEquals(balanceForSecondCard, actualBalanceForSecondCard);
+
+    }
+
 
 }
