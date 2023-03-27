@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static java.lang.Thread.sleep;
 
 public class MoneyTransferForCard {
-    private SelenideElement amountField = $("[data-test-id=amount]");
-    private SelenideElement fromField = $("[data-test-id=from]");
+    private SelenideElement amountField = $("[data-test-id=amount] .input__control");
+    private SelenideElement fromField = $("[data-test-id=from] .input__control");
     private SelenideElement transferButton = $("[data-test-id=action-transfer]");
 
     public MoneyTransferForCard() {

@@ -33,12 +33,13 @@ public class DataHelper {
     }
 
     public static CardInfo getFirstCardInfo () {
-        return new CardInfo("5559 0000 0000 0001");
+
+        return new CardInfo("5559000000000001");
     }
 
     public static CardInfo getSecondCardInfo () {
 
-        return new CardInfo("5559 0000 0000 0002");
+        return new CardInfo("5559000000000002");
     }
 
 }
