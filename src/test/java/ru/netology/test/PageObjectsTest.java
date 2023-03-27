@@ -19,7 +19,6 @@ public class PageObjectsTest {
 
     @BeforeEach
     void setUp() {
-        Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
     }
 
